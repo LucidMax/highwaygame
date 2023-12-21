@@ -1,0 +1,36 @@
+var numPairs = 5; 
+var rectGap = 10; 
+var yPos = []; 
+var ySpeeds = []; 
+
+
+for (var i = 0; i < numPairs; i++) {
+  yPos.push(-56 * numPairs + i * rectGap); 
+  ySpeeds.push(5); 
+}
+
+
+function draw() {
+  noStroke();
+  background(142, 148, 158);
+  fill(72, 168, 65);
+  rect(1, 1, 32, 401);
+  rect(368, 1, 32, 401);
+  fill(255);
+
+
+  for (var i = 0; i < yPos.length; i++) {
+    yPos[i] += ySpeeds[i]; 
+
+
+    if (yPos[i] > height) {
+      yPos[i] = -56 * numPairs; 
+    }
+  }
+
+
+  for (var i = 0; i < yPos.length; i++) {
+    rect(127, yPos[i], 11, 56);
+    rect(243, yPos[i], 11, 56);
+  }
+}
