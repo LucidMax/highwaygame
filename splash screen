@@ -1,0 +1,187 @@
+var drawBitmojiHead = function(bitmojiObject)
+{
+    /*var bx = bitmojiX;
+    var by = bitmojiY;
+    var bh = bitmojiHeight;
+    var bh = bitmojiHeight/100;
+    */
+    noStroke();
+    //face
+    fill(255, 219, 172);
+    ellipse(bitmojiObject.x+(bitmojiObject.h*76),bitmojiObject.y+(bitmojiObject.h*73),(bitmojiObject.h*80),(bitmojiObject.h*100)); // face
+    fill(255, 219, 172);
+    rect(bitmojiObject.x+(bitmojiObject.h*67),bitmojiObject.y+(bitmojiObject.h*110),bitmojiObject.h*20,bitmojiObject.h*13,(bitmojiObject.h*4));
+    
+    //eyes 
+    stroke(0, 0, 0);
+    fill(255, 255, 255);
+    ellipse(bitmojiObject.x+(bitmojiObject.h*60),bitmojiObject.y+(bitmojiObject.h*67),(bitmojiObject.h*20),bitmojiObject.h*7);//left
+    ellipse(bitmojiObject.x+(bitmojiObject.h*95),bitmojiObject.y+(bitmojiObject.h*67),(bitmojiObject.h*20),bitmojiObject.h*7);//right
+    fill(69,24,0);
+    arc(bitmojiObject.x+(bitmojiObject.h*60),bitmojiObject.y+(bitmojiObject.h* 64),(bitmojiObject.h* 10), (bitmojiObject.h*10), 0, 180); // left eyeris
+    arc(bitmojiObject.x+(bitmojiObject.h*95),bitmojiObject.y+(bitmojiObject.h* 64),(bitmojiObject.h*10), (bitmojiObject.h*10), 0, 180); // right eyeris
+    
+    //eyebrows
+    
+    line(bitmojiObject.x+(bitmojiObject.h*55),bitmojiObject.y+(bitmojiObject.h* 59),bitmojiObject.x+(bitmojiObject.h* 72),bitmojiObject.y+(bitmojiObject.h* 60));
+    line(bitmojiObject.x+(bitmojiObject.h*85),bitmojiObject.y+(bitmojiObject.h* 59),bitmojiObject.x+(bitmojiObject.h* 101),bitmojiObject.y+ (bitmojiObject.h*58));
+    line(bitmojiObject.x+(bitmojiObject.h*47),bitmojiObject.y+(bitmojiObject.h* 60),bitmojiObject.x+(bitmojiObject.h* 55),bitmojiObject.y+(bitmojiObject.h* 59));
+    line(bitmojiObject.x+(bitmojiObject.h*105),bitmojiObject.y+(bitmojiObject.h* 60),bitmojiObject.x+ (bitmojiObject.h*101),bitmojiObject.y+(bitmojiObject.h* 58));
+    
+    //mouth
+    fill(255, 255, 255);
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 93), (bitmojiObject.h*45), bitmojiObject.h*36,( 0),( 180));
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 93),(bitmojiObject.h* 45),bitmojiObject.h* 0,( 0),( 180));
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 98),(bitmojiObject.h* 44),bitmojiObject.h* 5, 0, 180);
+    
+    //nose
+    fill(0, 0, 0);
+    arc(bitmojiObject.x+(bitmojiObject.h*74),bitmojiObject.y+(bitmojiObject.h* 81),(bitmojiObject.h* 3),bitmojiObject.h* 3,( 0),( 180));
+    arc(bitmojiObject.x+(bitmojiObject.h*80),bitmojiObject.y+(bitmojiObject.h* 81),(bitmojiObject.h* 3),bitmojiObject.h* 3,( 0),( 180));
+    
+    //facial hair
+    fill(74, 54, 54);
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 116),(bitmojiObject.h* 29),bitmojiObject.h* 16,( 0),( 180));
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 111),(bitmojiObject.h* 13),bitmojiObject.h* 8, 0, 180);
+    arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h* 93),(bitmojiObject.h* 45),bitmojiObject.h* 8, 180, 360);
+    
+    //wig
+    fill(74, 54, 54);
+    ellipse(bitmojiObject.x+bitmojiObject.h*84,bitmojiObject.y+bitmojiObject.h*22,bitmojiObject.h*16,bitmojiObject.h*12);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*69,bitmojiObject.y+bitmojiObject.h*22,bitmojiObject.h*16,bitmojiObject.h*12);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*97,bitmojiObject.y+bitmojiObject.h*27,bitmojiObject.h*16,bitmojiObject.h*13);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*56,bitmojiObject.y+bitmojiObject.h*26,bitmojiObject.h*16,bitmojiObject.h*13);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*109,bitmojiObject.y+bitmojiObject.h*37,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*45,bitmojiObject.y+bitmojiObject.h*37,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*37,bitmojiObject.y+bitmojiObject.h*50,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*119,bitmojiObject.y+bitmojiObject.h*50,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*122,bitmojiObject.y+bitmojiObject.h*62,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*32,bitmojiObject.y+bitmojiObject.h*62,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*30,bitmojiObject.y+bitmojiObject.h*76,bitmojiObject.h*16,bitmojiObject.h*19);// hair   
+    ellipse(bitmojiObject.x+bitmojiObject.h*123,bitmojiObject.y+bitmojiObject.h*76,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+    ellipse(bitmojiObject.x+bitmojiObject.h*30,bitmojiObject.y+bitmojiObject.h*90,bitmojiObject.h*16,bitmojiObject.h*19);// hair 
+    ellipse(bitmojiObject.x+bitmojiObject.h*124,bitmojiObject.y+bitmojiObject.h*90,bitmojiObject.h*16,bitmojiObject.h*19);// hair
+
+};
+
+var drawBitmojiBody = function (bitmojiObject)
+{
+   
+  /*  var bx = bitmojiX;
+    var by = bitmojiY;
+    var bh = bitmojiHeight;
+    var bh = bitmojiHeight/100;
+    */
+//neck
+fill(bitmojiObject.shirtColor);
+rect(bitmojiObject.x+(bitmojiObject.h*67),bitmojiObject.y+(bitmojiObject.h*123),(bitmojiObject.h*20),bitmojiObject.h*13,(0));
+
+//chest
+fill(bitmojiObject.shirtColor);
+quad(bitmojiObject.x+(bitmojiObject.h*111),bitmojiObject.y+(bitmojiObject.h* 210),bitmojiObject.x+(bitmojiObject.h* 120), bitmojiObject.y+(bitmojiObject.h*130),bitmojiObject.x+(bitmojiObject.h* 35),bitmojiObject.y+ (bitmojiObject.h*130),bitmojiObject.x+(bitmojiObject.h* 45),bitmojiObject.y+ (bitmojiObject.h*210));
+
+//chain
+noFill();
+stroke(191, 191, 191);
+arc(bitmojiObject.x+(bitmojiObject.h*77),bitmojiObject.y+(bitmojiObject.h*130),bitmojiObject.h* 40,bitmojiObject.h* 45, 0, 180);
+
+//i
+if (bitmojiObject.initials === true){
+fill(0, 0, 0);
+text("MR",335,292,100,100);
+}
+};
+
+var bitmoji = function(bitmojiObject)
+{
+    drawBitmojiHead(bitmojiObject);
+    drawBitmojiBody(bitmojiObject);
+};
+
+
+
+bitmoji({	
+x:-9,
+y:-6,
+h:75 /100,
+shirtColor:color(0, 0, 0),
+initials:false
+});
+
+var drawHead = function(bitmojiX, bitmojiY, h) {
+    noStroke();
+    fill(210, 153, 108);
+    ellipse(bitmojiX, bitmojiY, 86 * h, 100 * h); //head
+    fill(255, 255, 255);
+    arc(bitmojiX - 42 * h, bitmojiY + 37 * h, 28 * h, 55 * h, 0, 361);
+    arc(bitmojiX + 42 * h, bitmojiY + 37 * h, 28 * h, 55 * h, 0, 361);
+    fill(0, 0, 0);
+    arc(bitmojiX + 7 * h, bitmojiY - 19 * h, 91 * h, -58 * h, 95, 183);
+    arc(bitmojiX + 3 * h, bitmojiY - 15 * h, 71 * h, -67 * h, 3, 179);
+    fill(0, 0, 0);
+    ellipse(bitmojiX - 18 * h, bitmojiY, 12 * h, 11 * h);
+    ellipse(bitmojiX + 14 * h, bitmojiY, 12 * h, 11 * h);
+    fill(199, 139, 94);
+    bezier(bitmojiX, bitmojiY, bitmojiX + 21 * h, bitmojiY + 22 * h, bitmojiX - 8 * h, bitmojiY + 20 * h, bitmojiX - 4 * h, bitmojiY + 15 * h);
+    fill(255, 255, 255);
+    arc(bitmojiX + 3 * h, bitmojiY + 25 * h, 30 * h, 13 * h, 1, 180);
+};
+
+var drawBody = function(bitmojiX, bitmojiY, h) {
+    fill(0, 0, 0);
+    rect(bitmojiX - 41 * h, bitmojiY + 50 * h, 86 * h, 85 * h, 1);
+    ellipse(bitmojiX + 51 * h, bitmojiY + 107 * h, 39 * h, 118 * h);
+    ellipse(bitmojiX - 41 * h, bitmojiY + 107 * h, 39 * h, 118 * h);
+    fill(255, 255, 255);
+    rect(bitmojiX - 10 * h, bitmojiY + 68 * h, 6 * h, 42 * h, 1);
+    rect(bitmojiX + 12 * h, bitmojiY + 67 * h, 6 * h, 42 * h, 1);
+};
+
+var drawBitmoji = function(bitmojiX, bitmojiY, h) {
+    drawHead(bitmojiX, bitmojiY, h);
+    drawBody(bitmojiX, bitmojiY, h);
+};
+
+drawBitmoji(347,40,0.7);
+
+fill(94, 145, 106);
+rect(2,154,405,260);
+
+var f = createFont("Times New Roman Italic");
+
+
+
+textSize(36);
+textFont(f, 32);
+fill(41, 196, 204);
+text("Highway Game", 94,88);
+
+textFont(f,24);
+fill(255, 255, 255);
+text("How to Play: ", 17,200);
+
+textFont(f,16);
+text("Avoid the passing cars as you speed through the highway!", 12, 228);
+text("You get a score for how long you play!", 11, 255);
+
+
+fill(84, 84, 84);
+rect(100,293,179,79,10);
+
+fill(106, 148, 166);
+rect(108,296,162,72,10);
+
+
+textSize(41);
+fill(0, 0, 0);
+text("START", 133,342);
+
+
+
+
+
+
+
+
+
+
